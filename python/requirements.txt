@@ -30,6 +30,6 @@ boto3 == 1.4.4
 certifi
 
 # For Python3 compatibility
-six == 1.12
+six == 1.15
 
 -e python/tidy
