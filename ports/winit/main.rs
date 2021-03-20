@@ -33,7 +33,7 @@ cfg_if::cfg_if! {
         mod headed_window;
         mod headless_window;
         mod keyutils;
-        mod main2;
+        mod main_desktop;
         mod prefs;
         mod resources;
         mod window_trait;
@@ -42,7 +42,7 @@ cfg_if::cfg_if! {
 
 #[cfg(not(target_os = "android"))] 
 pub fn main() {
-    main2::main();
+    main_desktop::main();
 }
 
 #[cfg(target_os = "android")]
