@@ -2,28 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-#[macro_use]
-extern crate lazy_static;
-#[macro_use]
-extern crate log;
-#[cfg(any(target_os = "macos", target_os = "linux"))]
-#[macro_use]
-extern crate sig;
-
-mod app;
-mod backtrace;
-mod browser;
-mod crash_handler;
-mod embedder;
-mod events_loop;
-mod headed_window;
-mod headless_window;
-mod keyutils;
-mod prefs;
-mod resources;
-mod window_trait;
-
-use app::App;
+use crate::{app::App, backtrace, crash_handler, prefs, resources};
 use getopts::Options;
 use servo::config::opts::{self, ArgumentParsingResult};
 use servo::config::servo_version;

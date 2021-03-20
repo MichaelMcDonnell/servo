@@ -14,13 +14,41 @@
 //!
 //! [winit]: https://github.com/rust-windowing/winit
 
-#[cfg(not(target_os = "android"))]
-include!("main2.rs");
+cfg_if::cfg_if! {
+    if #[cfg(not(target_os = "android"))] {
+        #[macro_use]
+        extern crate lazy_static;
+        #[macro_use]
+        extern crate log;
+        #[cfg(any(target_os = "macos", target_os = "linux"))]
+        #[macro_use]
+        extern crate sig;
+
+        mod app;
+        mod backtrace;
+        mod browser;
+        mod crash_handler;
+        mod embedder;
+        mod events_loop;
+        mod headed_window;
+        mod headless_window;
+        mod keyutils;
+        mod main2;
+        mod prefs;
+        mod resources;
+        mod window_trait;
+    }
+}
+
+#[cfg(not(target_os = "android"))] 
+pub fn main() {
+    main2::main();
+}
 
 #[cfg(target_os = "android")]
 pub fn main() {
     println!(
         "Cannot start /ports/servo/ on Android. \
-         Use /support/android/apk/ + /ports/libsimpleservo/ instead"
-    );
+        Use /support/android/apk/ + /ports/libsimpleservo/ instead"
+    );    
 }

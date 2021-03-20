@@ -5423,6 +5423,7 @@ version = "0.0.1"
 dependencies = [
  "backtrace",
  "cc",
+ "cfg-if 1.0.0",
  "clipboard",
  "euclid",
  "getopts",
