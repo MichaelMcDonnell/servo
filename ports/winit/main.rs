@@ -40,7 +40,7 @@ cfg_if::cfg_if! {
     }
 }
 
-#[cfg(not(target_os = "android"))] 
+#[cfg(not(target_os = "android"))]
 pub fn main() {
     main_desktop::main();
 }
