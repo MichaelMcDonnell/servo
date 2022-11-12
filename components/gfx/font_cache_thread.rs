@@ -314,6 +314,8 @@ impl FontCache {
                             }
                             let bytes = mem::replace(&mut *bytes.lock().unwrap(), vec![]);
                             trace!("@font-face {} data={:?}", family_name, bytes);
+                            // FIXME: Enable font sanitizing when there is a pure rust version.
+                            /*
                             let bytes = match fontsan::process(&bytes) {
                                 Ok(san) => san,
                                 Err(_) => {
@@ -332,6 +334,7 @@ impl FontCache {
                                     return;
                                 },
                             };
+                            */
                             let command = Command::AddDownloadedWebFont(
                                 family_name.clone(),
                                 url.clone(),

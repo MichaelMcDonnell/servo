@@ -1793,16 +1793,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "fontsan"
-version = "0.4.0"
-source = "git+https://github.com/servo/fontsan#29e879c870348c4b3fd51086e42dbb6365171479"
-dependencies = [
- "cmake",
- "libc",
- "miniz-sys",
-]
-
-[[package]]
 name = "foreign-types"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2057,7 +2047,6 @@ dependencies = [
  "dwrote",
  "euclid",
  "fnv",
- "fontsan",
  "freetype",
  "gfx_traits",
  "harfbuzz-sys",
@@ -3819,16 +3808,6 @@ name = "minimal-lexical"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a"
-
-[[package]]
-name = "miniz-sys"
-version = "0.1.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1e9e3ae51cea1576ceba0dde3d484d30e6e5b86dee0b2d412fe3a16a15c98202"
-dependencies = [
- "cc",
- "libc",
-]
 
 [[package]]
 name = "miniz_oxide"

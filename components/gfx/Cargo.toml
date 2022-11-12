@@ -18,7 +18,8 @@ app_units = "0.7"
 bitflags = "1.0"
 euclid = "0.20"
 fnv = "1.0"
-fontsan = { git = "https://github.com/servo/fontsan" }
+# FIXME: Enable font sanitizing when there is a pure rust version.
+#fontsan = { git = "https://github.com/servo/fontsan" }
 gfx_traits = { path = "../gfx_traits" }
 harfbuzz-sys = "0.5"
 ipc-channel = "0.14"
