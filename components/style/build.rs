@@ -77,12 +77,16 @@ fn main() {
         (true, false, false, false) => "gecko",
         (false, true, true, false) => "servo-2013",
         (false, true, false, true) => "servo-2020",
-        _ => panic!(
-            "\n\n\
+        _ => {
+            println!(
+                "\n\n\
              The style crate requires enabling one of its 'servo' or 'gecko' feature flags \
              and, in the 'servo' case, one of 'servo-layout-2013' or 'servo-layout-2020'.\
-             \n\n"
-        ),
+             \n\n
+             Falling back to 'servo-2013'.\n"
+            );
+            "servo-2013"
+        },
     };
     println!("cargo:rerun-if-changed=build.rs");
     println!("cargo:out_dir={}", env::var("OUT_DIR").unwrap());
