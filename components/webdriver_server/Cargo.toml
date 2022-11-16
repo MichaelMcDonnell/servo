@@ -11,7 +11,7 @@ name = "webdriver_server"
 path = "lib.rs"
 
 [dependencies]
-base64 = "0.12"
+base64 = "0.10"
 compositing = { path = "../compositing" }
 cookie = "0.12"
 crossbeam-channel = "0.4"
