@@ -548,6 +548,7 @@ checksum = "19b23557dd27704797128f9db2816416bef20dad62d4a9768714eeb65f07d296"
 name = "blurmac"
 version = "0.1.0"
 dependencies = [
+ "cfg-if",
  "log",
  "objc",
 ]
